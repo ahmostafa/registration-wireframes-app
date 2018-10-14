@@ -1,0 +1,38 @@
+<div class='container' fxLayout='column' fxLayoutAlign="space-around center" fxLayouyGap='20px'>
+    <div fxFlex fxFlexOffset="20px" class="formSize">
+        <form novalidate [formGroup]="registerationForm">
+            <mat-form-field class="full-width">
+                <input matInput formControlName="emailField" placeholder="Email address" type='email' required>
+
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input formControlName="passwordField" matInput placeholder="Password" type='password' required>
+
+
+            </mat-form-field>
+
+            <div class="full-width" id="strength" #strength>
+
+                <ul id="strengthBar">
+                    <li class="point" [style.background-color]="bar0"></li>
+                    <li class="point" [style.background-color]="bar1"></li>
+                    <li class="point" [style.background-color]="bar2"></li>
+
+                </ul>
+
+            </div>
+            <small>Strength: {{barLabel}}</small>
+            <br><br>
+            <button class="full-width" type="submit" color="primary" mat-raised-button [disabled]="registerationForm.invalid">Submit</button>
+        </form>
+
+
+
+
+
+        <br>
+        <br>
+        <p>{{registerationForm.value|json}} {{registerationForm.status|json}}</p>
+    </div>
+
+</div>

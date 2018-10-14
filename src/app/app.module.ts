@@ -8,11 +8,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RegisterationOneComponent } from './registeration-one/registeration-one.component';
+import { RegisterationTwoComponent } from './registeration-two/registeration-two.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterationOneComponent
+    RegisterationOneComponent,
+    RegisterationTwoComponent
   ],
   imports: [
     BrowserModule,
