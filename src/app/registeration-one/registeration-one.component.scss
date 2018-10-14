@@ -1,0 +1,31 @@
+$hint-text-color:rgba(0, 0, 0, .54);
+$valid-color: green;
+$invalid-color: red;
+.full-width {
+    width: 95%;
+}
+
+.half-width {
+    width: 45%;
+}
+
+.form-size {
+    width: 75%;
+}
+
+.icon-custom {
+    padding-right: 10px;
+}
+
+.icon-custom .fa-check {
+    color: $valid-color;
+}
+
+.icon-custom .fa-times {
+    color: $invalid-color;
+}
+
+.hint-custom-text {
+    color: $hint-text-color;
+    font-size: 75%;
+}

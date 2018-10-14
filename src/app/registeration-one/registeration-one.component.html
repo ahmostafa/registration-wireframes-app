@@ -1,0 +1,50 @@
+<div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+
+    <div fxFlex fxFlexOffset="30%" fxFlexOffset.xs="0">
+        <form novalidate [formGroup]="registerationForm">
+            <mat-form-field class="full-width">
+                <input matInput formControlName="emailField" placeholder="Email address" type='email' required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input formControlName="passwordField" matInput placeholder="Password" type='password' required>
+                <!-- <mat-hint><span [hidden]=(!formErrors.passwordField)>{{formErrors.passwordField}}</span></mat-hint> -->
+
+            </mat-form-field>
+            <div [hidden]=(!isPasswordUpdated)>
+                <div>
+                    <span class="icon-custom"> <i [ngClass]="{'fas':1, 'fa-times':formErrorsCheck.minlength,'fa-check':!formErrorsCheck.minlength}" ></i></span>
+                    <span class="hint-custom-text">{{validationMessages.passwordField.minlength}}</span>
+                </div>
+
+                <div>
+                    <span class="icon-custom"> <i class="fas" [ngClass]=" formErrorsCheck.reguired ? 'fa-times':'fa-check'" ></i></span>
+                    <span class="hint-custom-text">{{validationMessages.passwordField.reguired}}</span>
+                </div>
+                <div>
+                    <span class="icon-custom"> <i [ngClass]="{'fas':1, 'fa-times':formErrorsCheck.smallChar,'fa-check':!formErrorsCheck.smallChar}" ></i></span>
+                    <span class="hint-custom-text">{{validationMessages.passwordField.smallChar}}</span>
+                </div>
+                <div>
+                    <span class="icon-custom"> <i [ngClass]="{'fas':1, 'fa-times':formErrorsCheck.capitalChar,'fa-check':!formErrorsCheck.capitalChar}" ></i></span>
+                    <span class="hint-custom-text">{{validationMessages.passwordField.capitalChar}}</span>
+                </div>
+                <div>
+                    <span class="icon-custom"> <i [ngClass]="{'fas':1, 'fa-times':formErrorsCheck.number,'fa-check':!formErrorsCheck.number}" ></i></span>
+                    <span class="hint-custom-text">{{validationMessages.passwordField.number}}</span>
+                </div>
+                <div>
+                    <span class="icon-custom"> <i [ngClass]="{'fas':1, 'fa-times':formErrorsCheck.specialChar,'fa-check':!formErrorsCheck.specialChar}" ></i></span>
+                    <span class="hint-custom-text">{{validationMessages.passwordField.specialChar}}</span>
+                </div>
+            </div>
+            <br><br>
+            <button class="full-width" type="submit" color="primary" mat-raised-button [disabled]="registerationForm.invalid">Submit</button>
+
+        </form>
+
+
+
+        <p>{{registerationForm.value|json}} {{registerationForm.status|json}}</p>
+    </div>
+
+</div>
