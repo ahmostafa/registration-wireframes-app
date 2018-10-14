@@ -9,12 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RegisterationOneComponent } from './registeration-one/registeration-one.component';
 import { RegisterationTwoComponent } from './registeration-two/registeration-two.component';
+import { MenuComponent } from './menu/menu.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterationOneComponent,
-    RegisterationTwoComponent
+    RegisterationTwoComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +27,8 @@ import { RegisterationTwoComponent } from './registeration-two/registeration-two
     MatButtonModule,
     MatToolbarModule,
     FormsModule,
-    ReactiveFormsModule // ,
-    // AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
