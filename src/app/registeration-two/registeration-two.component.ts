@@ -89,5 +89,17 @@ setStrengthBarColor(barsCount: number, color: string): void {
     this['bar' + _n] = color;
 }
   }
-
+  onSubmit(): void {
+    alert('submitted');
+     this.resetForm();
+   }
+   resetForm(): void {
+     this.registerationForm .reset({
+       emailField: '',
+       passwordField: ''
+     });
+this.barLabel = '';
+this.passwordStrength = 0;
+this.updateStrengthMeter();
+   }
 }

@@ -95,5 +95,16 @@ export class RegisterationOneComponent implements OnInit {
 getPasswordDefaultBool(): boolean {
   return  (this.registerationForm.get('passwordField').value === '' &&  this.isPasswordUpdated);
 }
-
+onSubmit(): void {
+ alert('submitted');
+  this.resetForm();
+}
+resetForm(): void {
+  this.registerationForm .reset({
+    emailField: '',
+    passwordField: ''
+  });
+  this.isPasswordUpdated = false;
+  this.errorsBooleanDefault = false ;
+}
 }

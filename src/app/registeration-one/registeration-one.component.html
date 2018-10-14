@@ -1,7 +1,7 @@
 <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
 
     <div fxFlex fxFlexOffset="30%" fxFlexOffset.xs="0">
-        <form novalidate [formGroup]="registerationForm">
+        <form novalidate [formGroup]="registerationForm" (ngSubmit)="onSubmit()">
             <mat-form-field class="full-width">
                 <input matInput formControlName="emailField" placeholder="Email address" type='email' required>
             </mat-form-field>
